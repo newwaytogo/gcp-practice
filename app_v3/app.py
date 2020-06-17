@@ -58,10 +58,10 @@ def is_image():
     return _is_image
 
 class MessageForm(Form):
-    input_name = StringField(u'お名前', [validators.Length(min=1, max=16)])
-    input_message = TextAreaField(u'メッセージ',
+    input_name = StringField(u'名稱', [validators.Length(min=1, max=16)])
+    input_message = TextAreaField(u'訊息',
                                   [validators.Length(min=1, max=1024)])
-    input_photo = FileField(u'画像添付(jpg, jpeg, png, gif)',
+    input_photo = FileField(u'附加圖片(jpg, jpeg, png, gif)',
                             validators=[is_image()])
 
 @app.route('/')
