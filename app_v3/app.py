@@ -81,7 +81,7 @@ def messages():
 def post():
     form = MessageForm(CombinedMultiDict((request.files, request.form)))
     if request.method == 'POST' and form.validate():
-        timestamp = arrow.utcnow().to('Asia/Taiwan').format('YYYY/MM/DD HH:mm:ss')
+        timestamp = arrow.utcnow().to('Asia/Taipei').format('YYYY/MM/DD HH:mm:ss')
         name = request.form['input_name']
         message = request.form['input_message']
         if form.input_photo.data.filename:
