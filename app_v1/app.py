@@ -53,7 +53,7 @@ def messages():
 def post():
     form = MessageForm(request.form)
     if request.method == 'POST' and form.validate():
-        timestamp = arrow.utcnow().to('Asia/Taiwan').format('YYYY/MM/DD HH:mm:ss')
+        timestamp = arrow.utcnow().to('Asia/Taipei').format('YYYY/MM/DD HH:mm:ss')
         name = request.form['input_name']
         message = request.form['input_message']
         db.session.add(Message(timestamp, name, message, filename=None))
